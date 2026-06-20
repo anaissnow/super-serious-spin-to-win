@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dknfowx2dane7"]
+
+[node name="TestLevel" type="Node" unique_id=366816370]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1085828401]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -233.0
+offset_top = -50.5
+offset_bottom = 50.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Rotate clockwise" type="Button" parent="VBoxContainer" unique_id=811067510]
+layout_mode = 2
+text = "Rotate Clockwise (90)"
+
+[node name="Rotate counterclockwise" type="Button" parent="VBoxContainer" unique_id=1397354833]
+layout_mode = 2
+text = "Rotate Counterclockwise (90)"
+
+[node name="Apply" type="Button" parent="VBoxContainer" unique_id=16165526]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Apply"
