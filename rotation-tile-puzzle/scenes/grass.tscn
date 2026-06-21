@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b20fovuftfcl1"]
+
+[ext_resource type="Texture2D" uid="uid://65flvgtwiacn" path="res://assets/map tiles/grass tile.svg" id="1_e1kak"]
+
+[node name="Grass" type="TextureRect" unique_id=2103185346]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("1_e1kak")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2056780267]

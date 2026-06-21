@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://cmyw3a7467qk1"]
 
+[ext_resource type="Script" uid="uid://bre2344e8ii77" path="res://scripts/player_robot.gd" id="1_1gn0p"]
 [ext_resource type="Texture2D" uid="uid://w886wf088sqe" path="res://icon.svg" id="1_rfg0n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 25.0
 
 [node name="PlayerRobot" type="CharacterBody2D" unique_id=1363434086]
+script = ExtResource("1_1gn0p")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1257265790]
 position = Vector2(0, -25)
