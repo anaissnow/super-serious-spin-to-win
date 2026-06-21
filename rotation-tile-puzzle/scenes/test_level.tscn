@@ -6,17 +6,21 @@
 [ext_resource type="PackedScene" uid="uid://c4strr6kxq2su" path="res://scenes/dead_end.tscn" id="4_88ety"]
 [ext_resource type="PackedScene" uid="uid://b20fovuftfcl1" path="res://scenes/grass.tscn" id="5_ahbqi"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tmr53"]
+
 [node name="TestLevel" type="Node" unique_id=366816370]
 script = ExtResource("1_2venv")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1517229500]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -48.5
-offset_top = -182.0
-offset_right = 48.5
-offset_bottom = 182.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 20
@@ -27,6 +31,7 @@ theme_override_constants/margin_bottom = 20
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1390426445]
 custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
+theme_override_constants/separation = 50
 alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer" unique_id=1238169624]
@@ -52,6 +57,7 @@ layout_mode = 2
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=280539783]
 layout_mode = 2
 theme_override_constants/separation = 400
+theme_override_styles/separator = SubResource("StyleBoxEmpty_tmr53")
 
 [node name="Rotate clockwise" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=811067510]
 layout_mode = 2
@@ -69,6 +75,7 @@ text = "Apply"
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1075657149]
 layout_mode = 2
 theme_override_constants/separation = 400
+theme_override_styles/separator = SubResource("StyleBoxEmpty_tmr53")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Rotate clockwise" to="." method="_on_rotate_clockwise_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Rotate counterclockwise" to="." method="_on_rotate_counterclockwise_pressed"]
