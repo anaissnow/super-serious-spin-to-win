@@ -49,12 +49,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Apply"
 
-[node name="Reset" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=714541731]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Reset"
-
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Rotate clockwise" to="." method="_on_rotate_clockwise_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Rotate counterclockwise" to="." method="_on_rotate_counterclockwise_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Apply" to="." method="_on_apply_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Reset" to="." method="_on_reset_pressed"]
