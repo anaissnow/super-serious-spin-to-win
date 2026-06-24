@@ -14,7 +14,7 @@ var TileDict : Dictionary = {
 var random_type = TileDict.keys().pick_random()
 var atlas_coords = TileDict[random_type]
 var generated_tiles = []
-
+var map_offset := Vector2i(3, 2)
 
 
 # helper variable
@@ -55,7 +55,7 @@ func generate_map():
 				"Cell" : Vector2i(x, y),
 				"Atlas" : atlas,
 			})
-			tile_map_layer.set_cell(Vector2i(x, y), 0, atlas)
+			tile_map_layer.set_cell(Vector2i(x, y) + map_offset, 0, atlas)
 
 func _on_rotate_clockwise_pressed() -> void:
 	rotate_tile("cw")
@@ -88,7 +88,7 @@ func redraw_tiles():
 		var atlas = tile["Atlas"]
 		for x in GridSize:
 			for y in GridSize:
-				tile_map_layer.set_cell(cell, 0, atlas, applied_transform)
+				tile_map_layer.set_cell(cell + map_offset, 0, atlas, applied_transform)
 
 
 func _on_apply_pressed() -> void:
