@@ -1,54 +1,54 @@
 [gd_scene format=3 uid="uid://dknfowx2dane7"]
 
 [ext_resource type="Script" uid="uid://bubi76n8wctm0" path="res://scripts/test_level.gd" id="1_2venv"]
-[ext_resource type="PackedScene" uid="uid://dj2x3hntauhrq" path="res://scenes/straight_path.tscn" id="2_tmr53"]
-[ext_resource type="PackedScene" uid="uid://cs44hndcfarrt" path="res://scenes/curved_path.tscn" id="3_qcd3b"]
-[ext_resource type="PackedScene" uid="uid://c4strr6kxq2su" path="res://scenes/dead_end.tscn" id="4_88ety"]
-[ext_resource type="PackedScene" uid="uid://b20fovuftfcl1" path="res://scenes/grass.tscn" id="5_ahbqi"]
+[ext_resource type="Texture2D" uid="uid://dj2sdn18c0c67" path="res://assets/map tiles/MapTiles.png" id="6_qcd3b"]
 
-[node name="TestLevel" type="Node" unique_id=366816370]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_88ety"]
+texture = ExtResource("6_qcd3b")
+texture_region_size = Vector2i(80, 80)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g4v7s"]
+tile_size = Vector2i(80, 80)
+sources/0 = SubResource("TileSetAtlasSource_88ety")
+
+[node name="TestLevel" type="Node2D" unique_id=1084435376]
 script = ExtResource("1_2venv")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1085828401]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1979926499]
+tile_set = SubResource("TileSet_g4v7s")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1868346471]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1085828401]
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -254.0
+offset_left = -260.0
 offset_top = -50.0
-offset_right = -21.0
+offset_right = -27.0
 offset_bottom = 51.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="Rotate clockwise" type="Button" parent="VBoxContainer" unique_id=811067510]
+[node name="Rotate clockwise" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=811067510]
 layout_mode = 2
 text = "Rotate Clockwise (90)"
 
-[node name="Rotate counterclockwise" type="Button" parent="VBoxContainer" unique_id=1397354833]
+[node name="Rotate counterclockwise" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1397354833]
 layout_mode = 2
 text = "Rotate Counterclockwise (90)"
 
-[node name="Apply" type="Button" parent="VBoxContainer" unique_id=16165526]
+[node name="Apply" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=16165526]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Apply"
 
-[node name="MapTiles" type="Node" parent="." unique_id=862293314]
-
-[node name="StraightPath" parent="MapTiles" unique_id=21143763 instance=ExtResource("2_tmr53")]
-position = Vector2(341, 210.5)
-
-[node name="CurvedPath" parent="MapTiles" unique_id=106594773 instance=ExtResource("3_qcd3b")]
-position = Vector2(587.5, 456)
-
-[node name="DeadEnd" parent="MapTiles" unique_id=410556972 instance=ExtResource("4_88ety")]
-position = Vector2(341.5, 456)
-
-[node name="Grass" parent="MapTiles" unique_id=137643106 instance=ExtResource("5_ahbqi")]
-position = Vector2(587.5, 210)
-
-[connection signal="pressed" from="VBoxContainer/Rotate clockwise" to="." method="_on_rotate_clockwise_pressed"]
-[connection signal="pressed" from="VBoxContainer/Rotate counterclockwise" to="." method="_on_rotate_counterclockwise_pressed"]
-[connection signal="pressed" from="VBoxContainer/Apply" to="." method="_on_apply_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Rotate clockwise" to="." method="_on_rotate_clockwise_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Rotate counterclockwise" to="." method="_on_rotate_counterclockwise_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Apply" to="." method="_on_apply_pressed"]
